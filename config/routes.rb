@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  devise_for :users do
+    resources :posts 
+        resources :comments
+      end
+      root 'posts#index'
+    end
   require_relative 'config/environment'
   get 'sessions/new'
   get 'sessions/create'
@@ -9,7 +16,7 @@ Rails.application.routes.draw do
         resources :comments
       end
       root 'posts#index'
-
+    end
           resources :users, only: [:new, :create]
           get 'login', to: 'sessions#new'
           post 'login', to: 'sessions#create'
@@ -20,7 +27,6 @@ Rails.application.routes.draw do
             patch 'update_password'
           end
         end
-      run Rails.application
-    end
+
 
 
