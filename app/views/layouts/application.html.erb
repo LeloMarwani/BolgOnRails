@@ -7,6 +7,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <%if notice %>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+	   <%<% end %>
 
   <body>
   	<section class="hero is-primary is-medium">

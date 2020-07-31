@@ -1,0 +1,9 @@
+<h1>Sessions#create</h1>
+def create
+   @user = User.create(params.require(:user).permit(:username,        
+   :password))
+   session[:user_id] = @user.id
+   redirect_to '/welcome'
+end
+
+<p>Find me in app/views/sessions/create.html.erb</p>
